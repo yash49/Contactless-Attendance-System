@@ -4,6 +4,8 @@ from django.core.files.storage import FileSystemStorage
 from django.views.decorators.csrf import csrf_exempt
 
 import os
+import pickle
+import face_recognition
 
 ############################### FIREBASE ###############################
 
@@ -49,6 +51,43 @@ def insertUser(email,name):
 ##############################################################
 
 
+def encodeSingleFace(filename,name):
+
+    path = 'UserImages'
+
+    yo = open('valid_encoding', 'rb')      
+    valid_encoding = pickle.load(yo) 
+
+    yo = open('valid_names', 'rb') 
+    valid_names = pickle.load(yo) 
+
+    
+    # Loading the image
+    image = face_recognition.load_image_file(filename)
+
+    # encoding image
+    image_encoding = face_recognition.face_encodings(image)[0]
+
+    # append encoded image in the list
+    valid_encoding.append(image_encoding)
+
+    # append the name of the person in the list  Ex. 0_Yash Shah
+    valid_names.append(name)
+
+    print('Image of {} has been encoded'.format(name))
+
+    print('-----------------------------------------------------')
+
+    yo = open('valid_encoding', 'wb') 
+    pickle.dump(valid_encoding, yo)                      
+    yo.close() 
+
+    yo = open('valid_names', 'wb') 
+    pickle.dump(valid_names, yo)                      
+    yo.close() 
+
+
+
 @csrf_exempt
 def insertdata(request):
 
@@ -75,7 +114,10 @@ def insertdata(request):
 
             imagefilename = path+"/"+str(id)+"_"+str(name)+".jpg"
             fs = FileSystemStorage()
-            filename = fs.save(imagefilename, image)
+            fs.save(imagefilename, image)
+
+            # create and append the new encoding to the cached files
+            encodeSingleFace(imagefilename,str(id)+"_"+str(name))
     
             return JsonResponse({'result':'Success','message':'User data has been stored successfully.'})
         
