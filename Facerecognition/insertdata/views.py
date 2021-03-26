@@ -5,6 +5,7 @@ from django.http import HttpResponse
 
 from django.views.decorators.csrf import csrf_exempt
 
+# Added 2 rules in windows firewall - 1) inbound port 8000 1) outbound port 8000
 
 @csrf_exempt
 def insertdata(request):
