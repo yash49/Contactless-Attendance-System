@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "118382092739",
+    "firebase_url": "https://ingenious-1221c-default-rtdb.firebaseio.com",
+    "project_id": "ingenious-1221c",
+    "storage_bucket": "ingenious-1221c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:118382092739:android:63e2ea65bc778b44ccdd76",
+        "android_client_info": {
+          "package_name": "com.rte.contactless_attendance_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "118382092739-ucgobjmnnsdltt6ct5v2j2hnu6rhf8f7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsgcUrUjYmPhyp7Ud5zMDI1zSIN8SwUbA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "118382092739-ucgobjmnnsdltt6ct5v2j2hnu6rhf8f7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
