@@ -81,14 +81,5 @@ if __name__ == '__main__':
     
     #createEncoding()
 
-    valid_encoding = []
-    valid_names = []
-    yo = open('valid_encoding', 'wb') 
-    pickle.dump(valid_encoding, yo)                      
-    yo.close() 
-
-    yo = open('valid_names', 'wb') 
-    pickle.dump(valid_names, yo)                      
-    yo.close() 
 
     main()
