@@ -60,6 +60,9 @@ import time
 
 def insertLog(id):
 
+    cur = -1
+    past = -1
+
     if(firebase_admin.get_app()==None):
         cred = credentials.Certificate('mycreds.json')
         firebase_admin.initialize_app(cred, {
@@ -67,6 +70,7 @@ def insertLog(id):
         })
     
     timestamp = str(int(time.time()))
+    cur = timestamp
     reference=db.reference('logs')
     tmp = reference.get()
     
@@ -80,10 +84,11 @@ def insertLog(id):
     
     if(len(keys)>0):
         maxx = max(keys)
+        past = int(maxx)
         status = 1-int(tmp[str(id)][str(maxx)])
     
     tmp[str(id)][timestamp] = str(status) 
-
+  
     reference=db.reference('logs')
     reference.set(tmp)
 
