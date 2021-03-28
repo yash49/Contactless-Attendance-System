@@ -79,6 +79,48 @@ shutil
 
 Note :- If you get any error while installing dlib. Then Please Install Visual C++ tools for CMake in your Computer.
 
+To run the server write following command in cmd [path:Project directory],
 
+python manage.py runsslserver ip:8000
 
+ip = The local ip given to your machine by the router.
 
+to find ip use ipconfig command
+
+Suppose my ip is 10.0.0.4 then type following
+
+Example,
+	
+	python manage.py runsslserver 10.0.0.4:8000
+
+-------------------------------------------------------------------------------------------
+
+Now app stuff.....
+For Apps( Monitoring and Admin), do clean gradle build. Every library used in respective app is available in build.gradle file(App level).
+
+-------------------------------------------------------------------------------------------
+
+for Monitoring App,
+we have used following libraries.
+Google Vision for Mobile ( To detect face in live camera stream )
+Retrofit( to send data to API)
+
+for Admin App,
+Following libraries are added,
+Firebase-core, Firebase-realtime-Database ( Visit firebase for android documentation for more details :https://firebase.google.com/docs/android/setup )
+Recyclerview.
+
+Do clean bulid when you open the respective project. All libraries are used with stable version so most probably you will not face any issue.
+
+-------------------------------------------------------------------------------------------
+
+Change IP ADDRESS in RETROFIT base URL.
+in Contactless_Attendance project: Go to : RetrofitClientInstance.java
+You will found one static string variable named: BASE_URL
+value mustbe in given format: "https://<your-ip-address>:8000/"
+NOTE: ip-address must be same as you have given in django sslrunserver command.
+
+Now, run both app, monitoring and admin,
+show face in monitoring you will get realtime update in admin app without refresh.
+
+### At last, we thank ingenium team to give us such opportunity and proper guidenace to develop this idea.
