@@ -17,13 +17,13 @@ Owing to the current (COVID) situation it is essential to have a system, which h
 
 ## Technologies Used🛠
 
-#### Python-Django
+####  🐍Python-Django
 
-#### Android 
+#### 📱Android 
 
-#### Firebase
+#### ✨Firebase
 
-#### Google Vision API
+#### 👁Google Vision API
 
 ## Challenges we ran into🎢
 
