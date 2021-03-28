@@ -30,3 +30,10 @@ Working Android App for Registering data of users like name, email, image of use
 
 Working Android App for Monitoring the doors of the buildings/offices/rooms/colleges/lecture halls. It will capture the image of users and send it to the server for validation [ to Django API ] only when the face is visible inside the camera frame [ Thanks to Google vision API ], The Django API will compare the image with registered faces and generate the Attendance log in Firebase. The API returns a JSON response.
 
+## What's next for 
+
+We don’t have any IOT device with us that’s why we had created an Android App for monitoring. In Future what we can do is, We can use an IOT device like Raspberry pi for Monitoring which will call the Django API. We can also have multiple devices for Monitoring at different gates/doors.
+
+Advance Leave Ticket - Whenever any user is going to take a leave then he/she can put a ticket in advance the duration of leave along with the reason.
+
+Push Notification - Whenever any user is expected to be at any organization and he/she is absent then a notification mechanism will alert the user of the event.
