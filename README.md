@@ -55,17 +55,26 @@ The URLS of the respected database should be updated in the Project.
 
 You will also need the python and some additional packages.
 
-Additional required packages
-----------------------------
+#### Additional required packages
+
 wheel
+
 cmake
+
 cv2
+
 dlib
+
 face_recognition
+
 numpy
+
 django
+
 django-sslserverpickle
+
 firebase_admin
+
 shutil
 
 Note :- If you get any error while installing dlib. Then Please Install Visual C++ tools for CMake in your Computer.
