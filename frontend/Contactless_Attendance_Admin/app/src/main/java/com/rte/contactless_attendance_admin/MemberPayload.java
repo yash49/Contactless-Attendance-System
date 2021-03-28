@@ -10,7 +10,7 @@ import retrofit2.http.Part;
 
 public interface MemberPayload {
     @Multipart
-    //@POST("insertdata.php")
+    //testing fake api @POST("insertdata.php")
     @POST("insertdata")
     Call<ResponseBody> insertdata(
             @Part("name") RequestBody memberName,

@@ -9,7 +9,7 @@ import java.security.cert.CertificateException;
 
 public class RetrofitClientInstance {
   private static final String BASE_URL = "https://10.0.0.4:8000/";
- //private static final String BASE_URL = "https://192.168.1.136/test_api/";
+ //  private static final String BASE_URL = "https://192.168.1.136/test_api/";
     private static Retrofit.Builder builder =
             new Retrofit.Builder()
                     .baseUrl(BASE_URL)

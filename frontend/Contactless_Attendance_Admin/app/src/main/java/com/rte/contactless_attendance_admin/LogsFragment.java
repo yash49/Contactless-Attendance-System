@@ -1,17 +1,19 @@
 package com.rte.contactless_attendance_admin;
 
-import android.content.Intent;
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.firebase.auth.FirebaseAuth;
+import com.ashokvarma.bottomnavigation.BottomNavigationBar;
+import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.google.firebase.database.*;
 
 import java.sql.Timestamp;
@@ -24,7 +26,7 @@ public class LogsFragment extends Fragment {
     EmployeeLogsAdapter employeeLogsAdapter;
     private DatabaseReference database;
     ArrayList<String> names = new ArrayList<>();
-    Button logout;
+    ArrayList<String> idSet = new ArrayList<>();
     ArrayList<HashMap<String,Object>> logs = new ArrayList<>();
 
     @Override
@@ -37,16 +39,7 @@ public class LogsFragment extends Fragment {
         database = FirebaseDatabase.getInstance().getReference();
 
         logsContainer = view.findViewById(R.id.logs_container);
-        logout = view.findViewById(R.id.logout);
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(getActivity(),HomeActivity.class));
-                getActivity().finish();
 
-            }
-        });
         
         employeeLogsAdapter = new EmployeeLogsAdapter(getActivity(),names,logs);
         logsContainer.setLayoutManager(new LinearLayoutManager(getActivity()));

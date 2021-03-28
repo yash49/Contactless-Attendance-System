@@ -19,22 +19,15 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import com.google.firebase.database.*;
-import com.google.gson.Gson;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
-import org.json.JSONObject;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -43,10 +36,6 @@ public class MembersFragment extends Fragment {
     Button imageSelector, saveBtn;
     ImageView preview_img;
     File byteData;
-    RecyclerView membersContainer;
-    MembersAdapter adapter;
-    DatabaseReference database;
-    ArrayList<HashMap<String,String>> data = new ArrayList<>();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.members_fragment, parent, false);
@@ -60,8 +49,6 @@ public class MembersFragment extends Fragment {
        imageSelector = view.findViewById(R.id.photo_btn);
        saveBtn = view.findViewById(R.id.save_btn);
        preview_img = view.findViewById(R.id.preview_img);
-       membersContainer = view.findViewById(R.id.members_container);
-       adapter = new MembersAdapter(getContext(),data);
 
        imageSelector.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -74,30 +61,6 @@ public class MembersFragment extends Fragment {
            public void onClick(View v) {
                if(byteData == null) Log.e("ERROR:","NULL BYTES");
                if(byteData != null)sendRequest(byteData);
-           }
-       });
-
-       membersContainer.setLayoutManager(new LinearLayoutManager(getActivity()));
-       membersContainer.setAdapter(adapter);
-
-       database = FirebaseDatabase.getInstance().getReference();
-       database.child("users").addValueEventListener(new ValueEventListener() {
-           @Override
-           public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-               for(DataSnapshot snapshot1 : snapshot.getChildren()){
-                   if(snapshot1.getKey().equals("GS2"))continue;
-
-                   HashMap<String,String> temp = (HashMap<String, String>) snapshot1.getValue();
-                   if(data.contains(temp))continue;
-                   data.add(temp);
-                   adapter.notifyDataSetChanged();
-                }
-           }
-
-           @Override
-           public void onCancelled(@NonNull DatabaseError error) {
-
            }
        });
     }
@@ -167,15 +130,11 @@ public class MembersFragment extends Fragment {
         RequestBody requestFile = RequestBody.create(MediaType.parse("image/jpeg"),bytesData);
         MultipartBody.Part profilePhoto = MultipartBody.Part.createFormData("image", bytesData.getName(), requestFile);
 
-        final String name = nameBox.getText().toString().trim();
+        final String name = emailBox.getText().toString().trim();
         String email = emailBox.getText().toString().trim();
 
-        if(name.length() == 0 || email.length() == 0 ){
+        if(name.length() == 0 || email.length() == 0){
             Toast.makeText(getActivity(),"Please fill out all the details properly!",Toast.LENGTH_LONG).show();
-            return;
-        }
-        if(name.equals(email)){
-            Toast.makeText(getActivity(),"Name email could not be same!",Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -189,15 +148,13 @@ public class MembersFragment extends Fragment {
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
 
                 try{
-                    JSONObject res = new JSONObject();
-                    res = new Gson().fromJson(response.body().string(),JSONObject.class);
                     Toast.makeText(getActivity(),response.body().string(),Toast.LENGTH_LONG).show();
                     emailBox.setText("");
                     nameBox.setText("");
                     preview_img.setImageDrawable(getResources().getDrawable(R.drawable.scanner_ic));
                 }
                 catch(Exception e){
-                    //Toast.makeText(getActivity(),"RESPONSE ERROR:"+e.getMessage(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(),"RESPONSE ERROR:"+e.getMessage(),Toast.LENGTH_LONG).show();
                 }
 
             }
