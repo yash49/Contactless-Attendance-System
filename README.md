@@ -37,3 +37,33 @@ We don’t have any IOT device with us that’s why we had created an Android Ap
 Advance Leave Ticket - Whenever any user is going to take a leave then he/she can put a ticket in advance the duration of leave along with the reason.
 
 Push Notification - Whenever any user is expected to be at any organization and he/she is absent then a notification mechanism will alert the user of the event.
+
+
+## What is required and How to run the System.
+
+firebase Realtime Database
+Database Name : ingenious
+
+The firebase credentials JSON should be named as "mycreds.json" and placed in the Facerecognition folder[Project directory].
+The URLS of the respected database should be updated in the Project.
+
+You will also need the python and some additional packages.
+
+Additional required packages
+----------------------------
+wheel
+cmake
+cv2
+dlib
+face_recognition
+numpy
+django
+django-sslserverpickle
+firebase_admin
+shutil
+
+Note :- If you get any error while installing dlib. Then Please Install Visual C++ tools for CMake in your Computer.
+
+
+
+
