@@ -5,7 +5,7 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DteJqgMTaok" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-<img src="https://user-images.githubusercontent.com/30389552/112749235-a7766d00-8fde-11eb-944f-47c0ab27af37.gif" width="300px" height="550px"/>&nbsp;<img src="https://user-images.githubusercontent.com/30389552/112749551-9b8baa80-8fe0-11eb-832d-ad5a359fbf0d.gif" width="300px" height="550px"/>&nbsp;<img src="https://user-images.githubusercontent.com/30389552/112749683-8cf1c300-8fe1-11eb-87ec-b70cbe30720c.gif" width="300px" height="550px"/>
+<img src="https://user-images.githubusercontent.com/30389552/112749235-a7766d00-8fde-11eb-944f-47c0ab27af37.gif" width="300px" height="550px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/30389552/112749551-9b8baa80-8fe0-11eb-832d-ad5a359fbf0d.gif" width="300px" height="550px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/30389552/112749683-8cf1c300-8fe1-11eb-87ec-b70cbe30720c.gif" width="300px" height="550px"/>
 
 ## Inspiration:
 
