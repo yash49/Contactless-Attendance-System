@@ -40,7 +40,6 @@ Push Notification - Whenever any user is expected to be at any organization and 
 ## What is required and How to run the System.
 
 firebase Realtime Database
-Database Name : ingenious
 
 The firebase credentials JSON should be named as "mycreds.json" and placed in the Facerecognition folder[Project directory].
 The URLS of the respected database should be updated in the Project.
@@ -115,4 +114,3 @@ NOTE: ip-address must be same as you have given in django sslrunserver command.
 Now, run both app, monitoring and admin,
 show face in monitoring you will get realtime update in admin app without refresh.
 
-### At last, we thank ingenium team to give us such opportunity and proper guidenace to develop this idea.
