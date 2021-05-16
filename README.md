@@ -1,4 +1,6 @@
 
+<img src="https://user-images.githubusercontent.com/30389552/112749235-a7766d00-8fde-11eb-944f-47c0ab27af37.gif" width="270px" height="550px"/>&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/30389552/112749551-9b8baa80-8fe0-11eb-832d-ad5a359fbf0d.gif" width="270px" height="550px"/>&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/30389552/112749683-8cf1c300-8fe1-11eb-87ec-b70cbe30720c.gif" width="270px" height="550px"/>
+
 ## Inspiration 🧠:
 
 Owing to the current (COVID) situation it is essential to have a system, which has minimum contact, for attendance. Biometric attendance possesses the risk of spreading bacteria among its users. So in the pursuit of a solution, we came up with an idea of taking attendance with the help of a camera sensor. The current systems were capable of processing only one user's request at a time, which was very inefficient. Hence the inspiration came from the pursuit of a solution for no contact attendance system.
